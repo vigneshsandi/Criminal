@@ -1,1 +1,3 @@
-# ˜”*°•.˜”*°• The Tools For Educational Purpose Only •°*”˜.•°*”˜
+# +-------------------------------------------+
+# | This Tool Is Only For Educational Purpose |
+# +-------------------------------------------+
